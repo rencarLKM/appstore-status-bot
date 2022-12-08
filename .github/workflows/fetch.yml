@@ -16,8 +16,6 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
       - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: "2.7"
       - run: gem install bundler:2.1.4
       - run: bundle install
       - run: npm install
