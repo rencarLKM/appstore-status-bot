@@ -33,7 +33,7 @@ const checkVersion = async (app) => {
   var appInfoKey = "appInfo-" + app.appID;
   var submissionStartKey = "submissionStart" + app.appID;
 
-  const db = dirty("store.db");
+  const db = dirty("store2.db");
   db.on("load", async function () {
     var lastAppInfo = db.get(appInfoKey);
     if (!lastAppInfo || lastAppInfo.status != app.status) {
@@ -50,7 +50,7 @@ const checkVersion = async (app) => {
     db.set(appInfoKey, app);
 
     try {
-      const data = await fs.readFile("store.db", "utf-8");
+      const data = await fs.readFile("store2.db", "utf-8");
       await updateGist(data);
     } catch (error) {
       console.log(error);
