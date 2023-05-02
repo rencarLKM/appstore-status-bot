@@ -75,7 +75,7 @@ const getGist = async () => {
 
   const result = await request.get(options);
   try {
-    await fs.writeFile("store.db", result);
+    await fs.writeFile("store2.db", result);
     console.log("[*] file saved!");
   } catch (error) {
     console.log(error);
